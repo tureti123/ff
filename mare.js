@@ -1,5 +1,6 @@
 const express=require('express')
 const app=express()
+require('dotenv').config()
 const port =process.env.PORT || 9000
 app.use("/",(req,res)=>{
 res.json({message:"hello"})
