@@ -1,0 +1,16 @@
+{
+  "name": "lecon",
+  "version": "1.0.0",
+  "main": "mare.js",
+  "scripts": {
+    "start": "node src/mare.js",
+    "dev":"nodemon src/mare.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
