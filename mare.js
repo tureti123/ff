@@ -9,7 +9,7 @@ const { MongoClient } = mongodb;
 const app=express()
 import dotenv from 'dotenv'
 dotenv.config()
-const PORT=process.env.PORT || 9000
+const PORT=process.env.PORT
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const server = createServer(app);
 const io = new Server(server);
