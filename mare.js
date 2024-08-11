@@ -13,8 +13,9 @@ const PORT=process.env.PORT || 9000
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const server = createServer(app);
 const io = new Server(server);
-app.use(express.static(path.join(__dirname, 'version2')));
+app.use(express.static(path.join(__dirname)));
 
+app.use('/ordre', express.static(path.join(__dirname, 'version2/ordre')));
 
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + "/fin.html");  
