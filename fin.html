@@ -667,13 +667,14 @@ document.getElementById('audiotest').load()
 
 </script>
 <button onclick=" droideaudio()">commencer la partie</button>
-<button onclick="clear()">clear</button>
+
+<button onclick="hello()">hello</button>
 <script>
-
-function clear(){
-
+function hello (){
+    console.log('hello')
     socket.emit('clear')
 }
+
 </script>
 <div id="class"></div>
 <div id="listordre"></div>

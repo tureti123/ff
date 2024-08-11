@@ -294,7 +294,7 @@ io.on('connection', (socket) => {
 
     socket.on('clear',async()=>{
         
-       const execution= await collec.deleteMany({});
+        await collec.deleteMany({});
         T1.length=0
         T0.length=0
         
