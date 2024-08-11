@@ -15,7 +15,7 @@ const server = createServer(app);
 const io = new Server(server);
 app.use(express.static(path.join(__dirname)));
 
-app.use('/ordre', express.static(path.join(__dirname, 'version2/ordre')));
+app.use('/mordre', express.static(path.join(__dirname, '/mordre')));
 
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + "/fin.html");  
