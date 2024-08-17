@@ -595,7 +595,7 @@ globalThis.doubleface=async function doubleface(facy,socket,k,tr,ordre){
      }
        else{ 
         if(ordre===null || ordre===undefined){
-            var timer2=await (Math.floor((Math.random() * 4.99))+1)*10000
+            var timer2=await (Math.floor((Math.random() * 4.99))+3)*60000
                
                 let choisi = Math.floor(Math.random() * (doublefuck.length)-0,1);
             
@@ -664,7 +664,7 @@ globalThis.droide=async function droide(lebadre,socket,k,tr,ordre,first){
      }
        else{ 
         if(ordre===null || ordre===undefined){
-            var timer=await (Math.floor((Math.random() * 4.99))+1)*10000
+            var timer=await (Math.floor((Math.random() * 4.99))+1)*60000
          
             if (first===false){
                 mv='pick un champion aleatoire.mp3'
