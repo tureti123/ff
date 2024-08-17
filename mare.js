@@ -10,6 +10,7 @@ import path from 'path'
 const { MongoClient } = mongodb;
 const app=express()
 import dotenv from 'dotenv'
+
 dotenv.config()
 
 const PORT=process.env.PORT
