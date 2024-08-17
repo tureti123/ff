@@ -640,6 +640,7 @@ return compte
     document.getElementById("volumecontrol").addEventListener('input',()=>{
     document.getElementsByName("audible")[1].volume = document.getElementById("volumecontrol").value
     document.getElementsByName("audible")[0].volume = document.getElementById("volumecontrol").value
+    document.getElementsByName("audible")[2].volume = document.getElementById("volumecontrol").value
     })
 function audiotest(){
     if (document.getElementById('audiotest').paused){
