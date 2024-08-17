@@ -257,7 +257,7 @@ socket.on('t',async ()=>{
              faire passer pour un autre role tout en essayant de perdre'
             document.getElementById('role').innerHTML = 'imposteur';
             const imageContainer = document.getElementById('imposteur');
-          //  imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
+           imageContainer.innerHTML = `<img src="among-us-imposteur.jpg"  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('serpentin', () => {
@@ -266,7 +266,7 @@ socket.on('t',async ()=>{
             document.getElementById('enroler').innerHTML ="ton but est de gagner la partie et \
             pour avoir des points bonus tu dois avoir le plus de morts et de degats"
             const imageContainer = document.getElementById('serpentin');
-            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
+            imageContainer.innerHTML = `<img src="serpentin.png"  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('doubleface', (mele) => {
@@ -276,7 +276,7 @@ socket.on('t',async ()=>{
             const imageContainer = document.getElementById('imposteur');
             document.getElementById('enroler').innerHTML = 'ton but est de gagner ou de \
             perdre en fonction des ordres que tu vas recevoir'
-            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
+            imageContainer.innerHTML = `<img src="doubleface.jpg"  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('droide', (mele) => {
@@ -286,7 +286,7 @@ socket.on('t',async ()=>{
             tout en suivant les ordres qui te seront envoyés.Les ordres sont en général a \
             executer le plus tot possible'
             const imageContainer = document.getElementById('imposteur');
-            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
+            imageContainer.innerHTML = `<img src="droide.png"  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('superhero', () => {
@@ -295,7 +295,7 @@ socket.on('t',async ()=>{
             document.getElementById('enroler').innerHTML ='ton but est de gagner la partie et pour avoir des\
              points bonus tu dois avoir le meilleur kp(kp=kill+assist )<br>exemple pour les demeurer 5/3/6 \
              kp=5kills +6assists=11 qui est donc superieur a 10/0/0 dont le kp=10'
-           // imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
+            imageContainer.innerHTML = `<img src="superhero.png"  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('romeo', () => {
