@@ -7,15 +7,14 @@
 </head>
 <body>
     <script src="/socket.io/socket.io.js"></script>
-    <button onclick="audiotest()">test</button>
-    <button onclick="test2()">test2</button>
+
     <script>
         const socket = io();
     </script>
     <div id="imposteur"></div>
     <div id="a supprimer">
         <input id="salam">
-        <button onclick="demarcher()">envoyer</button>
+        <button onclick="demarcher()" class="allow">envoyer</button>
     </div>
     <script id="choisir un pseudo">
         let v=''
@@ -42,8 +41,8 @@
         }
     </script>
     
-    <button onclick="Tù(1,'a')">rejoindre t1</button>
-    <button onclick="Tù(0,'b')">rejoindre t2</button>
+    <button onclick="Tù(1,'a')" class="allow">rejoindre t1</button>
+    <button onclick="Tù(0,'b')" class="allow">rejoindre t2</button>
     <table id="sktt1">
         <thead>
             <tr>
@@ -61,7 +60,7 @@
             </tr>
         </thead>
         <tbody id="T0">
-            <td>gdfdgdf</td>
+            <td></td>
         </tbody>
     </table>
 
@@ -258,7 +257,7 @@ socket.on('t',async ()=>{
              faire passer pour un autre role tout en essayant de perdre'
             document.getElementById('role').innerHTML = 'imposteur';
             const imageContainer = document.getElementById('imposteur');
-            //imageContainer.innerHTML = `<img src="" alt="Image">`;
+          //  imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('serpentin', () => {
@@ -267,7 +266,7 @@ socket.on('t',async ()=>{
             document.getElementById('enroler').innerHTML ="ton but est de gagner la partie et \
             pour avoir des points bonus tu dois avoir le plus de morts et de degats"
             const imageContainer = document.getElementById('serpentin');
-            //imageContainer.innerHTML = `<img src="" alt="Image">`;
+            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('doubleface', (mele) => {
@@ -276,8 +275,8 @@ socket.on('t',async ()=>{
             document.getElementById('role').innerHTML = 'doubleface'
             const imageContainer = document.getElementById('imposteur');
             document.getElementById('enroler').innerHTML = 'ton but est de gagner ou de \
-            perdre ou fonction des ordres que tu vas recevoir'
-            //imageContainer.innerHTML = `<img src="" alt="Image">`;
+            perdre en fonction des ordres que tu vas recevoir'
+            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('droide', (mele) => {
@@ -287,7 +286,7 @@ socket.on('t',async ()=>{
             tout en suivant les ordres qui te seront envoyés.Les ordres sont en général a \
             executer le plus tot possible'
             const imageContainer = document.getElementById('imposteur');
-            //imageContainer.innerHTML = `<img src="" alt="Image">`;
+            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('superhero', () => {
@@ -296,7 +295,7 @@ socket.on('t',async ()=>{
             document.getElementById('enroler').innerHTML ='ton but est de gagner la partie et pour avoir des\
              points bonus tu dois avoir le meilleur kp(kp=kill+assist )<br>exemple pour les demeurer 5/3/6 \
              kp=5kills +6assists=11 qui est donc superieur a 10/0/0 dont le kp=10'
-           // imageContainer.innerHTML = `<img src="" alt="Image">`;
+           // imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('romeo', () => {
@@ -305,7 +304,7 @@ socket.on('t',async ()=>{
             document.getElementById('enroler').innerHTML ='ton but est de gagner et de partir mourir \
             instantanement des que ta juliette meurt .Le seul moment ou tu ne dois pas te sucider \
             c est quand tu es mort et que ta juliette meurt pendant ce moment '
-            //imageContainer.innerHTML = `<img src="" alt="Image">`;
+            //imageContainer.innerHTML = `<img src=""  style="width: 300px; height: auto;" alt="Image">`;
         })
 
         socket.on('avance',(d,titre)=>{
@@ -405,12 +404,7 @@ socket.notok=true
     let y = 0
     activation()
 
-    async function test(){
-        socket.emit('sendall')
-    }
-    async function test2(){
-        socket.emit('sendall2')
-    }
+   
 </script>
 <div id="test3">
     <tbody></tbody>
@@ -471,9 +465,6 @@ socket.notok=true
     }
 
     socket.on('message', (g,h) => {
-        console.log(g,h)
-        socket.role = g;
-        document.getElementById('role').innerHTML = socket.role;
         creationtab(h)
     });
 </script>
@@ -537,7 +528,7 @@ etiq1.innerHTML='le plus de morts'
     parametre.appendChild(deroule1)
    
     //modifiable
-for (let head=0;head<2;head++){
+for (let head=0;head<5;head++){
     console.log(hequipe)
     let ahead=document.createElement('th')
             ahead.id=`${head}`
@@ -565,7 +556,7 @@ for (let head=0;head<2;head++){
             row.appendChild(dline)
             dline.innerHTML=identityu[r]
             //modifiable
-        for (let id=0;id<2;id++){
+        for (let id=0;id<5;id++){
             let line= document.createElement('td')
             let checkbox=document.createElement('input')
             checkbox.id=`${r}${id}` 
@@ -587,12 +578,13 @@ for (let head=0;head<2;head++){
  async function acri(h){
     document.getElementById('validation').innerHTML=""
     //modifiable
-    for (let p=0;p<2;p++){
+    for (let p=0;p<5;p++){
         for (let r=0;r<6;r++){
             
             let acro=document.getElementById(`${r}${p}`)
             if(acro.checked===true){
                 socket.emit('elu',p,r,h)
+                
             }
 
         }
@@ -640,14 +632,14 @@ return compte
 }
 </script>
 <div id="audiote">
-    <button onclick="audiotest()" id="controle">demarer</button>
+    <button onclick="audiotest()" id="controle" class="allow">demarer</button>
     <input type="range" min="0" max="1" step="0.1" id="volumecontrol">
-    <audio  id="audiotest" name="audible"> <source src="Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4"></audio>
+    <audio id="audiotest" name="audible"> <source src="Rick Astley - Never Gonna Give You Up (Official Music Video).mp3" type="audio/mp3"/></audio>
 </div>
 <script>
     document.getElementById("volumecontrol").addEventListener('input',()=>{
-        console.log()
     document.getElementsByName("audible")[1].volume = document.getElementById("volumecontrol").value
+    document.getElementsByName("audible")[0].volume = document.getElementById("volumecontrol").value
     })
 function audiotest(){
     if (document.getElementById('audiotest').paused){
@@ -664,7 +656,10 @@ function audiotest(){
 
 document.getElementById('audiotest').load()
 
-
+function gagnant(){
+    socket.emit('gagnant')
+    document.getElementById('gagnant').innerHTML=''
+}
 </script>
 <button onclick=" droideaudio()">commencer la partie</button>
 
@@ -673,10 +668,16 @@ document.getElementById('audiotest').load()
 function hello (){
     console.log('hello')
     socket.emit('clear')
+    etiq1.setAttribute("for",`deroulement1`)
+etiq1.innerHTML='le plus de morts'
 }
 
 </script>
 <div id="class"></div>
 <div id="listordre"></div>
 <div id="enroler"> </div>
+<div id="gagnant">
+    <button onclick="gagnant()" id="gomme">team gagnant</button>
+</div>
+
 </html>
